@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "310660503780",
+    "firebase_url": "https://ayahtaskmnger.firebaseio.com",
+    "project_id": "ayahtaskmnger",
+    "storage_bucket": "ayahtaskmnger.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:310660503780:android:1ccf5dae80e01d0a27b4f1",
+        "android_client_info": {
+          "package_name": "com.example.ayahtaskmnger"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "310660503780-01bstl89j21e7o6t05e18mtrqbp4na9d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ayahtaskmnger",
+            "certificate_hash": "8d4e87598d212bdb282d05faa7766dc9c486dbdf"
+          }
+        },
+        {
+          "client_id": "310660503780-ets8ksnr6snommib41q7jig4dhe04av9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAskCjfzoLfk6wjPcMsHF0bfgEFhW-7xrI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "310660503780-ets8ksnr6snommib41q7jig4dhe04av9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
