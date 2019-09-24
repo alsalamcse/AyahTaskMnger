@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AddtaskActivity"></activity>
+        <activity android:name=".TempAllTaskActivity"></activity>
+        <activity android:name=".AddtaskActivity" />
         <activity android:name=".settingActivity" />
         <activity android:name=".signupActivity" />
         <activity android:name=".signinActivity" />

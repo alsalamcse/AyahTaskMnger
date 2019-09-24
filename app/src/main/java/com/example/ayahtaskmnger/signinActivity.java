@@ -1,5 +1,6 @@
 package com.example.ayahtaskmnger;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -8,6 +9,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class signinActivity extends AppCompatActivity {
@@ -63,10 +67,10 @@ public class signinActivity extends AppCompatActivity {
 
         }
         if(isOk){
-
+            signIn(email,passw);
 
         }
-        //signIn(email,passw)
+        //nstd3e-signIn(email,passw).if everything is ok
     }
 
     public boolean isValidEmailAddress(String email) {
@@ -80,7 +84,25 @@ public class signinActivity extends AppCompatActivity {
 
     private void signIn(String email,String passw){
         FirebaseAuth auth=FirebaseAuth.getInstance();//need firebaseAuth when we do Email and Password
-        auth.signInWithEmailAndPassword(email,passw);
+        auth.signInWithEmailAndPassword(email,passw).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful())
+                {
+                    //todo go to main screen (all task activbity)
+                    Intent i=new Intent(getApplication(),TempAllTaskActivity.class);
+                    startActivity(i);
+
+                }
+                else
+                {
+                    etEmail.setError("email or password is wrong ");
+                }
+
+
+
+            }
+        });
 
     }
 
