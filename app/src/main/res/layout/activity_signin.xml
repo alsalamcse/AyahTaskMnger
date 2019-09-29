@@ -16,12 +16,12 @@
         android:ems="10"
         android:hint="Email"
         android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toTopOf="@+id/etPassword2"
+        app:layout_constraintBottom_toTopOf="@+id/etPassword1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <EditText
-        android:id="@+id/etPassword2"
+        android:id="@+id/etPassword1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="28dp"
@@ -40,7 +40,7 @@
         app:layout_constraintBottom_toTopOf="@+id/btnsignup"
         app:layout_constraintEnd_toEndOf="@+id/btnsignup"
         app:layout_constraintStart_toStartOf="@+id/btnsignup"
-        app:layout_constraintTop_toBottomOf="@+id/etPassword2"
+        app:layout_constraintTop_toBottomOf="@+id/etPassword1"
         tools:text="signin" />
 
     <Button
