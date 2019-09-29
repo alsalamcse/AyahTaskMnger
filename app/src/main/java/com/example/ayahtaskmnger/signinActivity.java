@@ -28,7 +28,7 @@ public class signinActivity extends AppCompatActivity {
         btnsignin=findViewById(R.id.btnsignin);
         btnsignup=findViewById(R.id.btnsignup);
 
-       // btnsignup.setOnClickListener((view){
+       // btnsignup.setOnClickListener(new view.OnClickListener()){
                 //Intent i=new Intent((getApplicationContext(),signupActivity))
         //});
 
