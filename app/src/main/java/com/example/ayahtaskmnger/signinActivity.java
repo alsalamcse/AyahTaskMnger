@@ -23,8 +23,8 @@ public class signinActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signin);
 
-        etEmail=findViewById(R.id.etEmail);
-        etPassword=findViewById(R.id.etPassword);
+        etEmail=findViewById(R.id.etEmail2);
+        etPassword=findViewById(R.id.etPassword2);
         btnsignin=findViewById(R.id.btnsignin);
         btnsignup=findViewById(R.id.btnsignup);
 

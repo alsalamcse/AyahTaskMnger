@@ -10,7 +10,7 @@
         android:id="@+id/etFname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="76dp"
         android:ems="10"
         android:hint="First Name"
         android:inputType="textPersonName"
@@ -33,9 +33,12 @@
         app:layout_constraintTop_toBottomOf="@+id/etFname" />
 
     <EditText
-        android:id="@+id/etEmail"
+        android:id="@+id/etEmail2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="100dp"
         android:ems="10"
         android:hint="Email"
         android:inputType="textEmailAddress"
@@ -46,22 +49,22 @@
         android:id="@+id/etPhone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginLeft="64dp"
+        android:layout_marginTop="136dp"
         android:ems="10"
         android:hint="Phone"
         android:inputType="phone"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/etEmail2" />
 
     <EditText
-        android:id="@+id/etPassword"
+        android:id="@+id/etPassword2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="11dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="144dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
@@ -69,26 +72,25 @@
         app:layout_constraintTop_toBottomOf="@+id/etPhone" />
 
     <EditText
-        android:id="@+id/etRewitePassword"
+        android:id="@+id/etPassword2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginLeft="84dp"
         android:ems="10"
         android:hint="Rewite Password"
         android:inputType="textPassword"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/etPassword2" />
 
     <Button
         android:id="@+id/btnSave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="134dp"
-        android:layout_marginLeft="134dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginStart="144dp"
+        android:layout_marginLeft="144dp"
+        android:layout_marginTop="356dp"
         android:text="save"
-        app:layout_constraintStart_toStartOf="@+id/etRewitePassword"
-        app:layout_constraintTop_toBottomOf="@+id/etRewitePassword" />
+        app:layout_constraintStart_toStartOf="@+id/etPassword2"
+        app:layout_constraintTop_toBottomOf="@+id/etPassword2" />
 </androidx.constraintlayout.widget.ConstraintLayout>
