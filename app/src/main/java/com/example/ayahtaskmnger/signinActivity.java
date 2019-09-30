@@ -28,9 +28,13 @@ public class signinActivity extends AppCompatActivity {
         btnsignin=findViewById(R.id.btnsignin);
         btnsignup=findViewById(R.id.btnsignup);
 
-       // btnsignup.setOnClickListener(new view.OnClickListener()){
-                //Intent i=new Intent((getApplicationContext(),signupActivity))
-        //});
+        btnsignup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(getApplication(),signupActivity.class);
+                startActivity(i);
+            }
+        });
 
         btnsignin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,25 +49,25 @@ public class signinActivity extends AppCompatActivity {
         String email=etEmail.getText().toString();
         String passw=etPassword.getText().toString();
         boolean isOk=true;
-//        if(email.length()<4){
-////            etEmail.setError("Email length error");
-////            isOk=false;
-////
-////        }
-////        if(email.indexOf("@")<0||email.indexOf(".")<0)
-////        {
-////            etEmail.setError("Email wrong format");
-////            isOk=false;
-////        }
-        if(isValidEmailAddress(email)==false){
-            etEmail.setError("Invalid Email");
-            isOk=false;
-        }
-        if(passw.length()<8)
-        {
-            etPassword.setError("min lenght 8");
-            isOk=false;
+        if(email.length()<4){
+            etEmail.setError("Email length error");
+           isOk=false;
 
+        }
+        if(email.indexOf("@")<0||email.indexOf(".")<0)
+        {
+           etEmail.setError("Email wrong format");
+            isOk=false;
+//        }
+//        if(isValidEmailAddress(email)==false){
+//            etEmail.setError("Invalid Email");
+//            isOk=false;
+//        }
+//        if(passw.length()<8)
+//        {
+//            etPassword.setError("min lenght 8");
+//            isOk=false;
+//
 
         }
         if(isOk){

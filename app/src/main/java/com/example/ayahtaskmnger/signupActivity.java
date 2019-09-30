@@ -7,6 +7,7 @@ package com.example.ayahtaskmnger;
         import android.view.View;
         import android.widget.Button;
         import android.widget.EditText;
+        import android.widget.Toast;
 
         import com.google.android.gms.tasks.OnCompleteListener;
         import com.google.android.gms.tasks.Task;
@@ -45,7 +46,11 @@ public class signupActivity extends AppCompatActivity {
         String passwl = etPassword1.getText().toString();
         String passw2 = etPassword2.getText().toString();
         String fname = etFname.getText().toString();
+
+
         String lname = etLname.getText().toString();
+
+
         String phone = etPhone.getText().toString();
 
         if (email.length() < 4 ||
@@ -66,7 +71,7 @@ public class signupActivity extends AppCompatActivity {
             isok = false;
         }
         if (isok) {
-            creatAcount(email, passwl, lname, phone, fname)
+            creatAcount(email, passwl, lname, phone, fname);
             //creatAcount(email,passw1)
         }
 
@@ -80,6 +85,7 @@ public class signupActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful()){
+                        Toast.makeText(signupActivity.this, "sign up successful", Toast.LENGTH_SHORT).show();
                         finish();
                         // entakl llshasha alraesea
                     }
