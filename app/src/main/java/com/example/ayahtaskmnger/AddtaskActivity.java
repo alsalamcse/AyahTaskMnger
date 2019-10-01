@@ -13,6 +13,7 @@ public abstract class AddtaskActivity extends AppCompatActivity {
     private EditText etTitle,etSubject;
     private SeekBar skbrImportant;
     private Button btnSave;
+    private Object FirebaseDatabas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,9 +63,31 @@ public abstract class AddtaskActivity extends AppCompatActivity {
 
 
         }
+        if(isok)
+        {
+            MyTask t=new MyTask();
+            t.setTitle(title);
+           // creatMyTask(t);
+
+
+
+        }
 
 
     }
+////
+////    private void creatMyTask(MyTask t) {
+////        //1
+////        FirebaseDatabas databas=FirebaseDatabas.getInstance();
+////        //2
+////        DatabaseReferencre referencre=database.getReferencre();
+////    //7fed b data base
+////        String key= reference.child("task").push.getKey();
+//           reference.child("task").child(key).setValue(t);
+//
+////    }
+
+
 
 
 }
