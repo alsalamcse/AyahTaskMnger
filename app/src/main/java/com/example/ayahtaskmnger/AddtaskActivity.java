@@ -76,16 +76,23 @@ public abstract class AddtaskActivity extends AppCompatActivity {
 
     }
 ////
-////    private void creatMyTask(MyTask t) {
+//          private void creatMyTask(MyTask t) {
 ////        //1
-////        FirebaseDatabas databas=FirebaseDatabas.getInstance();
+//          FirebaseDatabas databas=FirebaseDatabas.getInstance();
 ////        //2
-////        DatabaseReferencre referencre=database.getReferencre();
+//          DatabaseReferencre referencre=database.getReferencre();
 ////    //7fed b data base
-////        String key= reference.child("task").push.getKey();
+//           String key= reference.child("task").push.getKey();
 //           reference.child("task").child(key).setValue(t);
 //
 ////    }
+    private void creatMyTask(MyTask t){
+        FirebaseDatabas databas=FirebaseDatabas.getInstance();
+        DatabaseReference reference=databas.getReference();
+        String  key= reference.child("task").push.getKey();
+        reference.child("task").child(key).setValue(t);
+        
+    }
 
 
 

@@ -1,3 +1,5 @@
+package com.example.ayahtaskmnger.data;
+
 public class MyUser {
     private String key;
     private String fname;
