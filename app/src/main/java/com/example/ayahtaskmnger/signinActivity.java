@@ -94,7 +94,7 @@ public class signinActivity extends AppCompatActivity {
                 if(task.isSuccessful())
                 {
                     //todo go to main screen (all task activbity)
-                    Intent i=new Intent(getApplication(),TempAllTaskActivity.class);
+                    Intent i=new Intent(getApplication(),MainTasksActivity.class);
                     startActivity(i);
 
                 }

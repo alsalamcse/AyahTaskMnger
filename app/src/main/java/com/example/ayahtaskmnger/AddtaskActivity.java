@@ -1,5 +1,6 @@
 package com.example.ayahtaskmnger;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -8,7 +9,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.SeekBar;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -92,7 +96,23 @@ public abstract class AddtaskActivity extends AppCompatActivity {
         FirebaseDatabase databas=FirebaseDatabase.getInstance();
         DatabaseReference reference=databas.getReference();
         String  key= reference.child("task").push().getKey();
-        reference.child("task").child(key).setValue(t);
+        reference.child("task").child(key).setValue(t).addOnCompleteListener(AddtaskActivity.this, new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if(task.isSuccessful())
+                {
+
+                    Toast.makeText(AddtaskActivity.this, "add successful", Toast.LENGTH_SHORT).show();
+                    finish();
+                }
+                else
+                {
+                    Toast.makeText(AddtaskActivity.this, "add failed", Toast.LENGTH_SHORT).show();
+                    task.getException().printStackTrace();
+
+                }
+            }
+        });
         
     }
 
