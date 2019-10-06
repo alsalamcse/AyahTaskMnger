@@ -9,11 +9,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.SeekBar;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public abstract class AddtaskActivity extends AppCompatActivity {
     private EditText etTitle,etSubject;
     private SeekBar skbrImportant;
     private Button btnSave;
-    private Object FirebaseDatabas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,11 +87,11 @@ public abstract class AddtaskActivity extends AppCompatActivity {
 //           String key= reference.child("task").push.getKey();
 //           reference.child("task").child(key).setValue(t);
 //
-////    }
+////     }
     private void creatMyTask(MyTask t){
-        FirebaseDatabas databas=FirebaseDatabas.getInstance();
+        FirebaseDatabase databas=FirebaseDatabase.getInstance();
         DatabaseReference reference=databas.getReference();
-        String  key= reference.child("task").push.getKey();
+        String  key= reference.child("task").push().getKey();
         reference.child("task").child(key).setValue(t);
         
     }
