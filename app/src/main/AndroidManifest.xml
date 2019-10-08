@@ -9,23 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".welcomescreen"></activity>
         <activity
             android:name=".MainTasksActivity"
             android:label="@string/title_activity_main_tasks"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".TempAllTaskActivity" />
         <activity android:name=".AddtaskActivity" />
         <activity android:name=".settingActivity" />
         <activity android:name=".signupActivity" />
         <activity android:name=".signinActivity" />
         <activity android:name=".loginActivity" />
-        <activity android:name=".welcomescreen">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>
