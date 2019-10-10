@@ -10,11 +10,8 @@ import com.google.firebase.auth.FirebaseAuth;
 public class welcomescreen extends AppCompatActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        setContentView(R.layout.activity_welcomescreen);
-
+    protected void onResume() {
+        super.onResume();
         Thread th=new Thread()
         {
             @Override
@@ -29,7 +26,7 @@ public class welcomescreen extends AppCompatActivity {
                     }
                     else
                     {
-                        Intent i=new Intent(getApplication(),signinActivity.class);
+                        Intent i=new Intent(getApplication(),MainTasksActivity.class);
                         startActivity(i);
                         finish();
 
@@ -45,6 +42,15 @@ public class welcomescreen extends AppCompatActivity {
         };
 
         th.start();
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        setContentView(R.layout.activity_welcomescreen);
+
+
     }
 
 
