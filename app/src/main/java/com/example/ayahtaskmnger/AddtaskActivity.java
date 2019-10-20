@@ -11,8 +11,10 @@ import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.Toast;
 
+import com.example.ayahtaskmnger.data.MyTask;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -72,7 +74,7 @@ public abstract class AddtaskActivity extends AppCompatActivity {
         if(isok)
         {
             MyTask t=new MyTask();
-            t.setTitle(title);
+            t.setTittle(title);
            // creatMyTask(t);
 
 
@@ -95,7 +97,12 @@ public abstract class AddtaskActivity extends AppCompatActivity {
     private void creatMyTask(MyTask t){
         FirebaseDatabase databas=FirebaseDatabase.getInstance();
         DatabaseReference reference=databas.getReference();
-        String  key= reference.child("task").push().getKey();
+        FirebaseAuth auth=FirebaseAuth.getInstance();//top get the user id or other detais email
+        String uid = auth.getCurrentUser().getUid();
+        t.setOwner(uid);
+
+
+        String  key= reference.child("task").child(uid).push().getKey();//(t7ded almfta7)
         reference.child("task").child(key).setValue(t).addOnCompleteListener(AddtaskActivity.this, new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
