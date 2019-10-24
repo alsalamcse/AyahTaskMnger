@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 
 import com.example.ayahtaskmnger.R;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 /**
@@ -35,6 +37,7 @@ public class AlltasksFragment extends Fragment {
         FirebaseDatabase database=FirebaseDatabase.getInstance();//to connect to database
         FirebaseAuth auth=FirebaseAuth.getInstance();//to get correct id
         String uid = auth.getUid();
+        DatabaseReference reference = database.getReference();
 
 
     }
