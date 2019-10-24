@@ -1,0 +1,73 @@
+package com.example.ayahtaskmnger.data;
+
+public class MyTask {
+
+    private String Key;
+    private String tittle;
+    private String subject;
+    private int important,necessary;
+    private String owner;
+
+    public String getKey() {
+        return Key;
+    }
+
+    public String getTittle() {
+        return tittle;
+    }
+
+    public String getSubject() {
+        return subject;
+    }
+
+    public int getImportant() {
+        return important;
+    }
+
+    public int getNecessary() {
+        return necessary;
+    }
+
+    public void setKey(String key) {
+        Key = key;
+    }
+
+    public void setTittle(String tittle) {
+        this.tittle = tittle;
+    }
+
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
+
+    public void setImportant(int important) {
+        this.important = important;
+    }
+
+    public void setNecessary(int necessary) {
+        this.necessary = necessary;
+    }
+
+    public String getOwner() {
+        return owner;
+    }
+
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
+
+    @Override
+    public String toString() {
+        return "MyTask{" +
+                "Key='" + Key + '\'' +
+                ", tittle='" + tittle + '\'' +
+                ", subject='" + subject + '\'' +
+                ", important=" + important +
+                ", necessary=" + necessary +
+                '}';
+    }
+}
+
+
+
+
