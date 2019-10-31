@@ -14,7 +14,7 @@ import com.example.ayahtaskmnger.R;
  * A [FragmentPagerAdapter] that returns a fragment corresponding to
  * one of the sections/tabs/pages.
  */
-public class SectionsPagerAdapter extends FragmentPagerAdapter {
+public class MyFragmentsPagerAdapter extends FragmentPagerAdapter {
 
     @StringRes
     private static final int[] TAB_TITLES = new int[]{R.string.tab_text_1, R.string.tab_text_2};//3naween
@@ -24,7 +24,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
     private HistoryFragment historyFragment;
     private RemovedFragment removedFragment;
 
-    public SectionsPagerAdapter(Context context, FragmentManager fm) {
+    public MyFragmentsPagerAdapter(Context context, FragmentManager fm) {
         super(fm);
         mContext = context;
         //2
@@ -35,11 +35,13 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
     }
 
     @Override
-    public Fragment getItem(int position)//rakm al tap
+    public Fragment getItem(int position)//rakm al tap(fragment)
     {
         // getItem is called to instantiate the fragment for the given page.
         // Return a PlaceholderFragment (defined as a static inner class below).
-        //3
+        /*
+     (  arja3 alfragment )
+         */
 
         if (position==0)
             return alltasksFragment;
