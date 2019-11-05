@@ -42,8 +42,14 @@ public class AlltasksFragment extends Fragment {
 
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_alltasks, container, false);
-        lvTasks=view.findViewById(R.id.);
+        lvTasks=view.findViewById(R.id.lstvTasks);
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        readTasksFromeFirebase();
     }
 
     public void readTasksFromeFirebase(){
@@ -59,6 +65,7 @@ public class AlltasksFragment extends Fragment {
                 for (DataSnapshot d:dataSnapshot.getChildren()) {
                     MyTask t=d.getValue(MyTask.class);
                     Log.d("MyTask",t.toString());
+                    taskAdapter.add(t);
 
                 }
             }
