@@ -20,7 +20,7 @@
             android:label="@string/title_activity_main_tasks"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".TempAllTaskActivity" />
-        <activity android:name=".AddtaskActivity" />
+        <activity android:name=".AddtaskActivity"/>
         <activity android:name=".settingActivity" />
         <activity android:name=".signupActivity" />
         <activity android:name=".signinActivity" />

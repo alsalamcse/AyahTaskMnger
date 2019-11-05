@@ -61,7 +61,8 @@ public class AlltasksFragment extends Fragment {
         reference.child("task").child(uid).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                //fe al datachange m3alg al7dth
+                taskAdapter.clear();
+                //**fe al datachange m3alg al7dth
                 for (DataSnapshot d:dataSnapshot.getChildren()) {
                     MyTask t=d.getValue(MyTask.class);
                     Log.d("MyTask",t.toString());

@@ -28,27 +28,20 @@ public abstract class AddtaskActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addtask);
 
-        etTitle=findViewById(R.id.etTitel);
-        etSubject=findViewById(R.id.etSupject);
-        skbrImportant=findViewById(R.id.skbrImportant);
-        btnSave=findViewById(R.id.btnSave);
-        btnSave.setOnClickListener(new View.OnClickListener()
-        {
-              @Override
-               public void onClick(View v) {
-                 Intent i = new Intent(getApplication(), TempAllTaskActivity.class);
-                 startActivity(i);
-                   }
-        });
-
-
-        btnSave.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dataHandler();
-            }
-
-        });
+//        etTitle=findViewById(R.id.etTitel);
+//        etSubject=findViewById(R.id.etSupject);
+//        skbrImportant=findViewById(R.id.skbrImportant);
+//        btnSave=findViewById(R.id.btnSave);
+//
+//
+//
+//        btnSave.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                dataHandler();
+//            }
+//
+//        });
 
     }
 
@@ -75,7 +68,7 @@ public abstract class AddtaskActivity extends AppCompatActivity {
         {
             MyTask t=new MyTask();
             t.setTittle(title);
-           // creatMyTask(t);
+            creatMyTask(t);
 
 
 
