@@ -3,7 +3,6 @@ package com.example.ayahtaskmnger;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -18,34 +17,31 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public abstract class AddtaskActivity extends AppCompatActivity {
+public class AddTaskActivity extends AppCompatActivity {
+
     private EditText etTitle,etSubject;
     private SeekBar skbrImportant;
     private Button btnSave;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addtask);
 
-//        etTitle=findViewById(R.id.etTitel);
-//        etSubject=findViewById(R.id.etSupject);
-//        skbrImportant=findViewById(R.id.skbrImportant);
-//        btnSave=findViewById(R.id.btnSave);
-//
-//
-//
-//        btnSave.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                dataHandler();
-//            }
-//
-//        });
+        etTitle=findViewById(R.id.etTitle);
+        btnSave=findViewById(R.id.btnSave);
+        etSubject=findViewById(R.id.etSupject);
+        skbrImportant=findViewById(R.id.skbrImportant);
+        btnSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dataHandler();
+            }
+
+        });
 
     }
 
-      public void dataHandler(){
+    public void dataHandler(){
         String title=etTitle.getText().toString();
         String sub=etSubject.getText().toString();
         int skb=skbrImportant.getProgress();
@@ -76,7 +72,7 @@ public abstract class AddtaskActivity extends AppCompatActivity {
 
 
     }
-////
+    ////
 //          private void creatMyTask(MyTask t) {
 ////        //1
 //          FirebaseDatabas databas=FirebaseDatabas.getInstance();
@@ -96,27 +92,25 @@ public abstract class AddtaskActivity extends AppCompatActivity {
 
 
         String  key= reference.child("task").child(uid).push().getKey();//(t7ded almfta7)
-        reference.child("task").child(key).setValue(t).addOnCompleteListener(AddtaskActivity.this, new OnCompleteListener<Void>() {
+        reference.child("task").child(uid).child(key).setValue(t).addOnCompleteListener(AddTaskActivity.this, new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful())
                 {
 
-                    Toast.makeText(AddtaskActivity.this, "add successful", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AddTaskActivity.this, "add successful", Toast.LENGTH_SHORT).show();
                     finish();
                 }
                 else
                 {
-                    Toast.makeText(AddtaskActivity.this, "add failed", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AddTaskActivity.this, "add failed", Toast.LENGTH_SHORT).show();
                     task.getException().printStackTrace();
 
                 }
             }
         });
-        
+
     }
-
-
 
 
 }

@@ -26,30 +26,19 @@ public class TaskAdapter extends ArrayAdapter<MyTask> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         //building item view
-
         View viem = LayoutInflater.from(getContext()).inflate(R.layout.taskitem, parent, true);
         TextView tvTittle = viem.findViewById(R.id.itmTvtittle);
         TextView tvSupject = viem.findViewById(R.id.itmTvsupject);
         RatingBar rbPrio = viem.findViewById(R.id.itmRatingPrio);
         CheckBox chIsCompleted = viem.findViewById(R.id.itmChbxlsCompleted);
-
         ImageView ivInfo = viem.findViewById(R.id.itmImageInfo);
         //geting data source
         MyTask myTask = getItem(position);
-
         //connect item view to data source
         tvTittle.setText(myTask.getTittle());
-
-        //*
-        //TODO
-
          tvSupject.setText(myTask.getSubject());
-
         rbPrio.setRating(myTask.getImportant());
         chIsCompleted.setChecked(false);
-
-
-
         return viem;
 
     }

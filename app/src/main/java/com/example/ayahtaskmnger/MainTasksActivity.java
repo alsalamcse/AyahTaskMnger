@@ -32,7 +32,7 @@ public class MainTasksActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Snackbar.make(view, "Add Task", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
-                Intent intent=new Intent(MainTasksActivity.this,TempAllTaskActivity.class);
+                Intent intent=new Intent(MainTasksActivity.this, AddTaskActivity.class);
                 startActivity(intent);
             }
         });
