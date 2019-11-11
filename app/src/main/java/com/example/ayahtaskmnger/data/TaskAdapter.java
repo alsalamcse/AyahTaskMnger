@@ -26,7 +26,7 @@ public class TaskAdapter extends ArrayAdapter<MyTask> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         //building item view
-        View viem = LayoutInflater.from(getContext()).inflate(R.layout.taskitem, parent, true);
+        View viem = LayoutInflater.from(getContext()).inflate(R.layout.taskitem, parent, false);
         TextView tvTittle = viem.findViewById(R.id.itmTvtittle);
         TextView tvSupject = viem.findViewById(R.id.itmTvsupject);
         RatingBar rbPrio = viem.findViewById(R.id.itmRatingPrio);
