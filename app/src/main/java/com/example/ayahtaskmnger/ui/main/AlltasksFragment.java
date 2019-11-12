@@ -39,7 +39,6 @@ public class AlltasksFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         taskAdapter=new TaskAdapter(getContext());
-
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_alltasks, container, false);
         lvTasks=view.findViewById(R.id.lstvTasks);
